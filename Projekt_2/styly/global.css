@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 :root {
     cursor: url("/img/mouse.png"), auto;
     font-size: 62.5%;
@@ -5,7 +7,7 @@
 
 body {
     font-size: initial;
-    font-family:;
+    font-family: VT323, system;
 }
 
 * {
@@ -27,9 +29,3 @@ a {
         url("./img/hover.png") 15 23,
         auto;
 }
-
-/* img {
-    cursor:
-        url("./img/hover.png") 15 23,
-        auto;
-} */

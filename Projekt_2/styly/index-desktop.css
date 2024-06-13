@@ -1,0 +1,9 @@
+@media only screen and (min-width: 768px) {
+    .hero-section {
+        background-image: url(../images/futurama.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+}
