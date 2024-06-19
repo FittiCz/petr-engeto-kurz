@@ -1,4 +1,129 @@
-@media only screen and (max-width: 768px) {
-    .hero-section {
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    height: var(--header-height);
+    background-color: var(--back-nav-color);
+    box-shadow: 0px 5px 5px 0px rgba(0, 13, 24, 0.65);
+    & .hamburger {
+        width: var(--icon-size);
+        margin-left: auto;
+        margin-right: 15px;
+        height: 100%;
+        &.open + .navigation {
+            transform: translateX(0);
+        }
+        &.open .img1 {
+            animation-name: skryt !important;
+        }
+        &.open .img2 {
+            animation-name: zobrazit !important;
+        }
+        & .menu-img {
+            animation-fill-mode: forwards;
+            animation-duration: 0.5s;
+            width: var(--icon-size);
+            height: 100%;
+            & img {
+                width: var(--icon-size);
+                height: 100%;
+            }
+        }
+        & .img1 {
+            position: absolute;
+            transform: scaleX(1);
+        }
+        & .img2 {
+            transform: scaleX(0);
+            position: absolute;
+        }
+    }
+
+    & .logo {
+        padding: 15px;
+        height: 100%;
+    }
+    & .navigation {
+        overflow: auto;
+        transition: transform 1.5s
+            linear(
+                0 0%,
+                0 1.8%,
+                0.01 3.6%,
+                0.03 6.35%,
+                0.07 9.1%,
+                0.13 11.4%,
+                0.19 13.4%,
+                0.27 15%,
+                0.34 16.1%,
+                0.54 18.35%,
+                0.66 20.6%,
+                0.72 22.4%,
+                0.77 24.6%,
+                0.81 27.3%,
+                0.85 30.4%,
+                0.88 35.1%,
+                0.92 40.6%,
+                0.94 47.2%,
+                0.96 55%,
+                0.98 64%,
+                0.99 74.4%,
+                1 86.4%,
+                1 100%
+            );
+        position: fixed;
+        bottom: 0;
+        top: calc(var(--header-height) + 0.5rem);
+        right: 0;
+        left: 20%;
+        background-color: var(--back-nav-color);
+        transform: translateX(100%);
+        & .listitem {
+            display: block;
+            margin: 20px 0;
+            & .nav-container {
+                margin: auto;
+                width: max-content;
+                text-align: center;
+                & .text {
+                    margin-top: 10px;
+                    padding-inline: 10px;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.hero-section {
+    background-color: #a6c1d6;
+    min-height: calc(100dvh - var(--header-height));
+    background-image: url(../images/Bender.svg);
+    background-position: center 50%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+@keyframes skryt {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+@keyframes zobrazit {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
     }
 }

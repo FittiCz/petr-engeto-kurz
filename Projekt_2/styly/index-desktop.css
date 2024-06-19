@@ -1,9 +1,68 @@
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 10rem;
+        & .logo {
+            height: 100%;
+        }
+        & .hamburger {
+            display: none;
+        }
+        & .navigation {
+            display: flex;
+            position: static;
+            font-size: 24px;
+            margin-right: 5rem;
+            background-color: unset;
+            width: auto;
+            max-height: none;
+            transform: translateX(0);
+            overflow-y: auto;
+            & .list {
+                display: flex;
+                gap: 25px;
+            }
+            & .listitem {
+                & a {
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    font-weight: bold;
+                    height: 100%;
+                }
+                & .nav-container {
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    & .nav-icon {
+                        align-self: center;
+                        width: 40px;
+                        height: 40px;
+                        padding-top: 10px;
+                        & img {
+                            margin: auto;
+                        }
+                    }
+                }
+                & .nav-container::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 0;
+                    height: 8%;
+                    border-radius: 10px;
+                    background-color: var(--hover-color);
+                    transition: 0.3s;
+                }
+                & .nav-container:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
     .hero-section {
-        background-image: url(../images/futurama.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
+        min-height: calc(100dvh - 10rem);
     }
 }
