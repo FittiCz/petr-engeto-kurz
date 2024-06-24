@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (width > 910px) {
     header {
         display: flex;
         justify-content: space-between;
@@ -15,15 +15,26 @@
             font-size: 24px;
             margin-right: 5rem;
             background-color: unset;
+            height: 100%;
             width: auto;
             max-height: none;
             transform: translateX(0);
-            overflow-y: auto;
+            overflow-y: hidden;
+            padding: 10px 0;
             & .list {
                 display: flex;
                 gap: 25px;
             }
             & .listitem {
+                margin: 0;
+                padding: 0px 10px;
+                &.active {
+                    background-color: var(--hover-color);
+                    border-radius: 10px;
+                    & .nav-container:hover::before {
+                        display: none;
+                    }
+                }
                 & a {
                     display: flex;
                     text-align: center;

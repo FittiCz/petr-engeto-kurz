@@ -1,0 +1,8 @@
+body {
+    background-color: var(--background-color);
+}
+
+.info p {
+    padding: 40px 40px;
+    max-width: 100ch;
+}
