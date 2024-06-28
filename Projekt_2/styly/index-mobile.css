@@ -46,6 +46,7 @@ header {
     }
     & .navigation {
         overflow: auto;
+        background-color: var(--back-nav-color);
         transition: transform 1.5s
             linear(
                 0 0%,
@@ -76,16 +77,15 @@ header {
         bottom: 0;
         top: calc(var(--header-height) + 0.5rem);
         right: 0;
-        left: 20%;
-        background-color: var(--back-nav-color);
+        left: 30%;
         transform: translateX(100%);
         & .listitem {
             display: block;
             margin: 20px 0;
             & .nav-container {
-                margin: auto;
-                width: max-content;
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 & .text {
                     margin-top: 10px;
                     padding-inline: 10px;
@@ -97,12 +97,15 @@ header {
 }
 
 .hero-section {
-    background-color: #a6c1d6;
     min-height: calc(100dvh - var(--header-height));
     background-image: url(../images/Bender.svg);
     background-position: center 50%;
     background-size: 40%;
     background-repeat: no-repeat;
+    & h1 {
+        padding-top: 20px;
+        text-align: center;
+    }
 }
 
 @keyframes skryt {

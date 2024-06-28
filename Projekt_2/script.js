@@ -13,9 +13,12 @@ hamburger.addEventListener("click", () => {
         imageHamburger.style.setProperty("animation-name", "zobrazit")
 
         imageCancel.style.setProperty("animation-name", "skryt")
+        document.body.style.backgroundColor = "#a6c1d6";
     }
     else {
         hamburger.classList.add("open")
+        document.body.style.backgroundColor = "rgba(0,0,0,0.9)";
     }
 }
 )
+

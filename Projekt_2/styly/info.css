@@ -2,7 +2,32 @@ body {
     background-color: var(--background-color);
 }
 
-.info p {
+.info {
+    gap: 40px;
     padding: 40px 40px;
-    max-width: 100ch;
+    display: flex;
+    flex-direction: column;
+    & h3 {
+        padding-bottom: 30px;
+        text-decoration: underline;
+    }
+    & p {
+        max-width: 100ch;
+    }
+}
+
+@media (width > 910px) {
+    .info {
+        padding: 40px 0 0 0;
+        align-items: center;
+        & .zakladni-informace {
+            flex: 1;
+        }
+        & .story {
+            flex: 1;
+        }
+        & p {
+            max-width: 100ch;
+        }
+    }
 }

@@ -14,10 +14,10 @@
             position: static;
             font-size: 24px;
             margin-right: 5rem;
-            background-color: unset;
             height: 100%;
             width: auto;
             max-height: none;
+            background-color: unset;
             transform: translateX(0);
             overflow-y: hidden;
             padding: 10px 0;
@@ -27,7 +27,6 @@
             }
             & .listitem {
                 margin: 0;
-                padding: 0px 10px;
                 &.active {
                     background-color: var(--hover-color);
                     border-radius: 10px;
@@ -36,11 +35,7 @@
                     }
                 }
                 & a {
-                    display: flex;
-                    text-align: center;
-                    align-items: center;
                     font-weight: bold;
-                    height: 100%;
                 }
                 & .nav-container {
                     display: flex;
