@@ -12,6 +12,12 @@
     --icon-size: 49px;
 }
 
+@media (width < 1920px) {
+    :root {
+        font-size: 50%;
+    }
+}
+
 *::-webkit-scrollbar {
     width: 10px;
 }
@@ -46,7 +52,7 @@ h2 {
 }
 h3 {
     letter-spacing: 2px;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 500;
 }
 p {

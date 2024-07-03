@@ -1,13 +1,9 @@
-body {
-    background-color: var(--background-color);
-}
-
 .info {
     gap: 40px;
     padding: 40px 40px;
     display: flex;
     flex-direction: column;
-    & h3 {
+    & h2 {
         padding-bottom: 30px;
         text-decoration: underline;
     }
