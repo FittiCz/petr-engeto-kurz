@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
 
 :root {
@@ -8,10 +7,13 @@
     --back-nav-color: #7ca4bd;
     --hover-color: #fffbc7;
     --background-color: #a6c1d6;
-    --header-height: 7rem;
+    --header-height: 8rem;
     --icon-size: 49px;
 }
 
+/* html {
+    padding-bottom: 40px;
+} */
 @media (width < 1920px) {
     :root {
         font-size: 50%;
@@ -31,13 +33,21 @@ body {
     font-size: initial;
     font-family: VT323, "Pixelify Sans", system;
     background-color: #a6c1d6;
+    padding-bottom: 60px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* transition: all 1s; */
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -47,17 +57,35 @@ h1 {
 }
 h2 {
     letter-spacing: 1px;
-    font-size: 5.5rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 h3 {
-    letter-spacing: 2px;
-    font-size: 3.5rem;
-    font-weight: 500;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+h4 {
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 p {
-    font-size: 2.3rem;
     letter-spacing: 1px;
+}
+
+@media (width > 890px) {
+    h2 {
+        font-weight: 500;
+        font-size: 5.5rem;
+    }
+    h3 {
+        font-weight: 500;
+        font-size: 3.5rem;
+    }
+    h4 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2.3rem;
+    }
 }
 
 img {
@@ -66,20 +94,284 @@ img {
     max-height: 100%;
 }
 
+ul,
+li {
+    list-style-type: none;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+}
+
 .nav-container p {
     font-family: "Jersey 10", "Pixelify Sans";
     letter-spacing: 1.5px;
 }
 
-a {
+a,
+a * {
     text-decoration: none;
     color: black;
-    &:hover {
-        cursor:
-            url("/images/hover.png") 15 23,
-            auto;
-    }
+    cursor:
+        url("/images/hover.png") 10 15,
+        auto;
     &:visited {
         color: black;
+    }
+}
+
+::selection {
+    background-color: var(--hover-color);
+}
+
+.nadpis {
+    font-weight: 600;
+}
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    align-items: center;
+    height: var(--header-height);
+    background-color: var(--back-nav-color);
+    box-shadow: 0px 5px 2px 0px rgba(0, 13, 24, 0.74);
+    &::before {
+        display: block;
+        content: "";
+        position: fixed;
+        background-color: black;
+        top: calc(var(--header-height) + 0.5rem);
+        left: 0;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(100vw);
+        transition: transform 1.5s
+            linear(
+                0 0%,
+                0 1.8%,
+                0.01 3.6%,
+                0.03 6.35%,
+                0.07 9.1%,
+                0.13 11.4%,
+                0.19 13.4%,
+                0.27 15%,
+                0.34 16.1%,
+                0.54 18.35%,
+                0.66 20.6%,
+                0.72 22.4%,
+                0.77 24.6%,
+                0.81 27.3%,
+                0.85 30.4%,
+                0.88 35.1%,
+                0.92 40.6%,
+                0.94 47.2%,
+                0.96 55%,
+                0.98 64%,
+                0.99 74.4%,
+                1 86.4%,
+                1 100%
+            );
+    }
+
+    &:has(.open)::before {
+        transform: translateX(0);
+    }
+    & .hamburger {
+        width: var(--icon-size);
+        position: absolute;
+        right: 15px;
+        height: 100%;
+        &.open + .navigation {
+            transform: translateX(0);
+        }
+        &.open .img1 {
+            animation-name: skryt !important;
+        }
+        &.open .img2 {
+            animation-name: zobrazit !important;
+        }
+        & .menu-img {
+            animation-fill-mode: forwards;
+            animation-duration: 0.5s;
+            width: var(--icon-size);
+            height: 100%;
+            & img {
+                width: var(--icon-size);
+                height: 100%;
+            }
+        }
+        & .img1 {
+            position: absolute;
+            transform: scaleX(1);
+        }
+        & .img2 {
+            transform: scaleX(0);
+            position: absolute;
+        }
+    }
+
+    & .logo {
+        padding: 3px;
+        height: 100%;
+    }
+    & .navigation {
+        overflow: auto;
+        background-color: var(--back-nav-color);
+        transition: transform 1.5s
+            linear(
+                0 0%,
+                0 1.8%,
+                0.01 3.6%,
+                0.03 6.35%,
+                0.07 9.1%,
+                0.13 11.4%,
+                0.19 13.4%,
+                0.27 15%,
+                0.34 16.1%,
+                0.54 18.35%,
+                0.66 20.6%,
+                0.72 22.4%,
+                0.77 24.6%,
+                0.81 27.3%,
+                0.85 30.4%,
+                0.88 35.1%,
+                0.92 40.6%,
+                0.94 47.2%,
+                0.96 55%,
+                0.98 64%,
+                0.99 74.4%,
+                1 86.4%,
+                1 100%
+            );
+        position: fixed;
+        bottom: 0;
+        top: calc(var(--header-height) + 0.5rem);
+        right: 0;
+        left: 50%;
+        transform: translateX(100%);
+        & .listitem {
+            display: block;
+            margin: 20px 0;
+            & .nav-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & .text {
+                    margin-top: 10px;
+                    padding-inline: 10px;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--back-nav-color);
+    text-align: center;
+    padding: 15px 10px;
+    & a {
+        text-decoration: underline;
+    }
+}
+@media (width > 890px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 10rem;
+        & .logo {
+            height: 100%;
+            padding: 10px;
+        }
+        & .hamburger {
+            display: none;
+        }
+        & .navigation {
+            display: flex;
+            position: static;
+            font-size: 2.4rem;
+            margin-right: 5rem;
+            height: 100%;
+            width: auto;
+            max-height: none;
+            background-color: unset;
+            transform: translateX(0);
+            overflow-y: hidden;
+            padding: 1rem 0;
+            & .list {
+                display: flex;
+                gap: 25px;
+            }
+            & .listitem {
+                margin: 0;
+                &.active {
+                    background-color: var(--hover-color);
+                    border-radius: 10px;
+                    & .nav-container:hover::before {
+                        display: none;
+                    }
+                }
+                & a {
+                    font-weight: 700;
+                }
+                & .nav-container {
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    & .nav-icon {
+                        align-self: center;
+                        width: 4rem;
+                        height: 4rem;
+                        padding-top: 10px;
+                        & img {
+                            margin: auto;
+                        }
+                    }
+                }
+                & .nav-container::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 0;
+                    height: 8%;
+                    border-radius: 10px;
+                    background-color: var(--hover-color);
+                    transition: 0.3s;
+                }
+                & .nav-container:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes skryt {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+@keyframes zobrazit {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
     }
 }

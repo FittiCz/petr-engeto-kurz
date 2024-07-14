@@ -1,0 +1,9 @@
+@media (width > 890px) {
+    .seznam-epizod {
+        max-width: 200ch;
+        margin: 50px auto;
+        & .card small {
+            font-size: 1.9rem;
+        }
+    }
+}

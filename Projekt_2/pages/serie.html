@@ -5,25 +5,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styly/global.css">
-        <link rel="stylesheet" href="../styly/index-mobile.css">
-        <link rel="stylesheet" href="../styly/index-desktop.css">
-        <link rel="stylesheet" href="../styly/serie.css">
+        <link rel="stylesheet" href="../styly/serie-mobil.css">
+        <link rel="stylesheet" href="../styly/serie-desktop.css">
         <title>Info</title>
     </head>
 
     <body>
         <header>
-            <div class="logo"><img src="../images/Futurama_1999_logo.png" alt=""></div>
+            <div class="logo"><img src="../images/Futurama_1999_logo.png" alt="navigační ikona"></div>
             <div class="hamburger">
-                <div class="img1 menu-img"><img src="../pixel_icon/MenuPixel.svg" alt=""></div>
-                <div class="img2 menu-img"><img src="../pixel_icon/cancel.svg" alt=""></div>
+                <div class="img1 menu-img"><img src="../pixel_icon/MenuPixel.svg" alt="navigační ikona"></div>
+                <div class="img2 menu-img"><img src="../pixel_icon/cancel.svg" alt="navigační ikona"></div>
             </div>
             <nav class="navigation">
                 <div role="list" class="list">
                     <div role="listitem" class="listitem">
                         <a href="/">
                             <div class="nav-container">
-                                <div class="nav-icon"><img src="../pixel_icon/HomePixel.svg" alt=""></div>
+                                <div class="nav-icon"><img src="../pixel_icon/HomePixel.svg" alt="navigační ikona">
+                                </div>
                                 <p class="text">Domů</p>
                             </div>
                         </a>
@@ -31,41 +31,46 @@
                     <div role="listitem" class="listitem">
                         <a href="info.html">
                             <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/GlobalPixel.svg" alt=""></span>
+                                <span class="nav-icon"><img src="../pixel_icon/GlobalPixel.svg"
+                                        alt="navigační ikona"></span>
                                 <p class="text">Info</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem active">
-                        <a href="#">
+                        <a href="serie.html">
                             <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/VideoPixel.svg" alt=""></span>
+                                <span class="nav-icon"><img src="../pixel_icon/VideoPixel.svg"
+                                        alt="navigační ikona"></span>
                                 <p class="text">Série</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
-                        <a href="#">
+                        <a href="postavy.html">
                             <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/UserPixel.svg" alt=""></span>
+                                <span class="nav-icon"><img src="../pixel_icon/UserPixel.svg"
+                                        alt="navigační ikona"></span>
                                 <p class="text">Postavy</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
 
-                        <a href="#">
+                        <a href="Organizace.html">
                             <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/FactoryPixel.svg" alt=""></span>
-                                <p class="text">Firmy</p>
+                                <span class="nav-icon"><img src="../pixel_icon/FactoryPixel.svg"
+                                        alt="navigační ikona"></span>
+                                <p class="text">Organizace</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
 
-                        <a href="#">
+                        <a href="obrazky.html">
                             <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/PicturePixel.svg" alt=""></span>
+                                <span class="nav-icon"><img src="../pixel_icon/PicturePixel.svg"
+                                        alt="navigační ikona"></span>
                                 <p class="text">Obrázky</p>
                             </div>
                         </a>
@@ -77,8 +82,7 @@
         <section class="series">
 
             <h2>Série</h2>
-
-            <div class="flex-box">
+            <div class="container">
                 <template id="card-template">
                     <div class="card">
                         <div class="card-inner">
@@ -87,7 +91,7 @@
                             </div>
                             <div class="icon">
                                 <a href="#" class="iconBox link">
-                                    <img src="../pixel_icon/info_serie.svg" alt="">
+                                    <img src="../pixel_icon/info_serie.svg" alt="navigační ikona">
                                 </a>
                             </div>
                         </div>
@@ -101,13 +105,20 @@
                         </div>
                     </div>
                 </template>
-
             </div>
 
         </section>
 
-        <script src="../script.js"></script>
-        <script src="../rendererSerie.mjs" type="module"></script>
+        <footer>
+            <a href="https://github.com/FittiCz" target="_blank">Petr Kovalský</a> |
+            <a href="https://theposterdb.com/set/87795" target="_blank">Plakáty</a> |
+            <a href="https://www.csfd.cz/film/77748-futurama/prehled/" target="_blank">CSFD</a> |
+            <a href="https://cs.wikipedia.org/wiki/Futurama">Wikipedia</a> |
+            <a href="https://futurama.fandom.com/wiki" target="_blank">Fandom Wiki</a>
+        </footer>
+
+        <script src="/scripts/script.js"></script>
+        <script src="/scripts/rendererSerie.mjs" type="module"></script>
 
     </body>
 

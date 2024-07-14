@@ -1,0 +1,13 @@
+@media (width > 890px) {
+    .info {
+        display: flex;
+        justify-content: center;
+        & .max-width {
+            max-width: 920px;
+            padding: 35px 15px 40px 15px;
+            & .photos {
+                flex-direction: row;
+            }
+        }
+    }
+}
