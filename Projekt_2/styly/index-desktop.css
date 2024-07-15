@@ -1,5 +1,3 @@
 @media (width > 890px) {
-    .hero-section {
-        min-height: calc(100dvh - 10rem - 60px);
-    }
+    /* STYLY PRO DESKTOP */
 }

@@ -1,6 +1,11 @@
 @media (width > 890px) {
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+    .characters {
+        padding-inline: 2.5rem;
+
+        & .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+            gap: 4rem;
+        }
     }
 }

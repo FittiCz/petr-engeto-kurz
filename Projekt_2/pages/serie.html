@@ -7,70 +7,80 @@
         <link rel="stylesheet" href="../styly/global.css">
         <link rel="stylesheet" href="../styly/serie-mobil.css">
         <link rel="stylesheet" href="../styly/serie-desktop.css">
-        <title>Info</title>
+        <title>Série | FUTURAMA</title>
     </head>
 
     <body>
         <header>
-            <div class="logo"><img src="../images/Futurama_1999_logo.png" alt="navigační ikona"></div>
+            <div class="logo">
+                <img src="/images/Futurama_1999_logo.png" alt="logo">
+            </div>
             <div class="hamburger">
-                <div class="img1 menu-img"><img src="../pixel_icon/MenuPixel.svg" alt="navigační ikona"></div>
-                <div class="img2 menu-img"><img src="../pixel_icon/cancel.svg" alt="navigační ikona"></div>
+                <div class="img1 menu-img">
+                    <img src="/pixel_icon/MenuPixel.svg" alt="otevřít menu">
+                </div>
+                <div class="img2 menu-img">
+                    <img src="/pixel_icon/cancel.svg" alt="zavřít menu">
+                </div>
             </div>
             <nav class="navigation">
                 <div role="list" class="list">
                     <div role="listitem" class="listitem">
                         <a href="/">
-                            <div class="nav-container">
-                                <div class="nav-icon"><img src="../pixel_icon/HomePixel.svg" alt="navigační ikona">
-                                </div>
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/HomePixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Domů</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
-                        <a href="info.html">
-                            <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/GlobalPixel.svg"
-                                        alt="navigační ikona"></span>
+                        <a href="/pages/info.html">
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/GlobalPixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Info</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem active">
-                        <a href="serie.html">
-                            <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/VideoPixel.svg"
-                                        alt="navigační ikona"></span>
+                        <a href="/pages/serie.html">
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/VideoPixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Série</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
-                        <a href="postavy.html">
-                            <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/UserPixel.svg"
-                                        alt="navigační ikona"></span>
+                        <a href="/pages/postavy.html">
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/UserPixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Postavy</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
-
-                        <a href="Organizace.html">
-                            <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/FactoryPixel.svg"
-                                        alt="navigační ikona"></span>
+                        <a href="/pages/Organizace.html">
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/FactoryPixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Organizace</p>
                             </div>
                         </a>
                     </div>
                     <div role="listitem" class="listitem">
-
-                        <a href="obrazky.html">
-                            <div class="nav-container">
-                                <span class="nav-icon"><img src="../pixel_icon/PicturePixel.svg"
-                                        alt="navigační ikona"></span>
+                        <a href="/pages/obrazky.html">
+                            <div class="nav-link-content">
+                                <span class="nav-link-icon">
+                                    <img src="/pixel_icon/PicturePixel.svg" alt="navigační ikona">
+                                </span>
                                 <p class="text">Obrázky</p>
                             </div>
                         </a>
@@ -80,40 +90,35 @@
         </header>
 
         <section class="series">
-
             <h2>Série</h2>
             <div class="container">
                 <template id="card-template">
                     <div class="card">
                         <div class="card-inner">
                             <div class="imgBox">
-                                <img src="{{src}}" alt="obrazek serie">
+                                <img src="{{src}}" alt="obrázek série">
                             </div>
                             <div class="icon">
                                 <a href="#" class="iconBox link">
-                                    <img src="../pixel_icon/info_serie.svg" alt="navigační ikona">
+                                    <img src="/pixel_icon/info_serie.svg" alt="info o sérii">
                                 </a>
                             </div>
                         </div>
                         <div class="content">
                             <h3>Serie č. <span class="cislo-serie">{{cislo-serie}}</span></h3>
-                            <p class="rok-vydani">Rok vydání: <span class="rok-vydani-hodnota">{{rok-vydani}}</span>
-                            </p>
-                            <p class="stopaz">Celková stopáž: <span class="stopaz-h">{{stopaz-h}}</span>h
-                                <span class="stopaz-min">{{stopaz-min}}</span>min
-                            </p>
+                            <p class="rok-vydani">Rok vydání: <span class="rok-vydani-hodnota">{{rok-vydani}}</span></p>
+                            <p class="stopaz">Celková stopáž: <span class="stopaz-h">{{stopaz-h}}</span>h <span class="stopaz-min">{{stopaz-min}}</span>min</p>
                         </div>
                     </div>
                 </template>
             </div>
-
         </section>
 
         <footer>
             <a href="https://github.com/FittiCz" target="_blank">Petr Kovalský</a> |
             <a href="https://theposterdb.com/set/87795" target="_blank">Plakáty</a> |
             <a href="https://www.csfd.cz/film/77748-futurama/prehled/" target="_blank">CSFD</a> |
-            <a href="https://cs.wikipedia.org/wiki/Futurama">Wikipedia</a> |
+            <a href="https://cs.wikipedia.org/wiki/Futurama" target="_blank">Wikipedia</a> |
             <a href="https://futurama.fandom.com/wiki" target="_blank">Fandom Wiki</a>
         </footer>
 

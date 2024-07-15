@@ -1,14 +1,17 @@
 body {
     overflow: hidden;
 }
+
 .hero-section {
     min-height: calc(100dvh - var(--header-height) - 60px);
     --uhel: 0deg;
     user-select: none;
+
     & h1 {
         padding-top: 20px;
         text-align: center;
     }
+
     &::before {
         display: block;
         content: "";

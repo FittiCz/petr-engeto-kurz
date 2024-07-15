@@ -1,9 +1,11 @@
-.section {
+.images {
     padding: 15px;
+
     & h2 {
-        margin: 20px;
+        margin: 20px 0;
         text-align: center;
     }
+
     & .img-container {
         display: flex;
         flex-direction: column;
@@ -25,19 +27,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     &.open {
         transform: translateY(0);
         opacity: 1;
     }
+
     & .content {
         & img {
             max-height: 90vh;
+
+
         }
     }
+
     & .close-button {
         position: absolute;
         top: 30px;
         right: 30px;
+
         & img {
             filter: invert();
         }

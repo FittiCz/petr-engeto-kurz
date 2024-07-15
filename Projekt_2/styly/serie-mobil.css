@@ -4,8 +4,9 @@
 
 h2 {
     text-align: center;
-    padding: 15px;
+    margin: 15px 0;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -14,12 +15,14 @@ h2 {
 
     & .card {
         width: 35rem;
+
         & .card-inner {
             position: relative;
             aspect-ratio: 25/38;
             border-radius: 1.25rem;
             border-bottom-right-radius: initial;
             overflow: hidden;
+
             .imgBox {
                 position: absolute;
                 inset: 0;
@@ -31,6 +34,7 @@ h2 {
                     object-position: bottom;
                 }
             }
+
             .icon {
                 position: absolute;
                 bottom: -0.375rem;
@@ -68,24 +72,25 @@ h2 {
                     display: flex;
                     justify-content: center;
                     animation: icon 500ms alternate infinite;
+
                     & img {
                         width: 6rem;
                     }
                 }
             }
         }
+
         & .content {
             border-radius: 1.25rem;
             margin-top: 15px;
             text-align: center;
+            padding: 10px;
             box-shadow:
                 5px 5px 10px #94acbe,
                 -5px -5px 10px #b8d6ee7e;
-            & h3 {
-                padding: 5px;
-            }
-            & p {
-                padding: 5px;
+
+            &>* {
+                margin-bottom: 5px;
             }
         }
     }
@@ -95,6 +100,7 @@ h2 {
     from {
         transform: translate(3px, 3px) scale(1);
     }
+
     to {
         transform: translate(0) scale(1.05);
     }

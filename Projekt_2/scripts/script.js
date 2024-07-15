@@ -20,6 +20,11 @@ hamburger.addEventListener("click", () => {
 }
 )
 
+const heroSection = document.querySelector(".hero-section")
+if (heroSection) {
+    heroSection.addEventListener("click", otoc)
+}
+
 let uhel = 90
 function otoc() {
     const hero = document.querySelector(".hero-section")
@@ -37,7 +42,7 @@ if (photo1 && photo2) {
     });
 
     photo1.addEventListener("mouseleave", () => {
-        photo1.src = "../images/Matt_Groening_by_Gage_Skidmore_2.jpg"
+        photo1.src = "/images/Matt_Groening_by_Gage_Skidmore_2.jpg"
     });
 
     photo2.addEventListener("mouseenter", () => {

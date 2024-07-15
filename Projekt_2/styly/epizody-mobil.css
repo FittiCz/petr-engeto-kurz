@@ -1,25 +1,39 @@
+.seznam-epizod {
+    padding: 15px;
+
+    & h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
 .card {
-    margin: 15px;
+    margin-bottom: 15px;
     border-radius: 15px;
     box-shadow:
         5px 5px 10px #94acbe,
         -5px -5px 10px #b8d6ee7e;
     padding: 20px;
-    & .nazev-dilu ul li p {
-        display: inline-block;
-        padding-left: 15px;
-    }
-    & .rok-publikace p {
-        display: inline-block;
-    }
-    & .cislo-dilu p {
-        display: inline-block;
-    }
-    & .delka-dilu p {
-        display: inline-block;
-    }
-}
 
-.nadpis {
-    padding-bottom: 15px;
+    & .nazev-dilu {
+        & .nadpis {
+            margin-bottom: 5px;
+        }
+
+        & ul li {
+            padding-left: 15px;
+        }
+    }
+
+    & .popis-dilu p {
+        margin-bottom: 15px;
+    }
+
+    &>div {
+        margin-bottom: 15px;
+
+        & span {
+            font-size: 2.3rem;
+        }
+    }
 }
