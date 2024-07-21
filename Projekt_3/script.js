@@ -1,14 +1,18 @@
-const switcher = document.querySelector(".toggle input")
+const switcher = document.querySelector(".toggle-input")
 
-switcher.addEventListener("change", (event) => {
-    if (event.target.checked) {
-        document.documentElement.setAttribute("data-theme", "dark")
+switcher.addEventListener("change", switchTheme)
+
+function switchTheme(event) {
+    const isLightMode = !event.target.checked
+
+    if (isLightMode) {
+        document.documentElement.setAttribute("data-theme", "light")
 
     }
     else {
-        document.documentElement.setAttribute("data-theme", "light")
+        document.documentElement.setAttribute("data-theme", "dark")
     }
-});
+}
 
 
 const toggle = document.querySelector('.toggle-input');
