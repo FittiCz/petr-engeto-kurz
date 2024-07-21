@@ -11,17 +11,34 @@ FCFCFC - stars
 */
 
 .wrapper {
-    /* padding-top: 40px; */
-    text-align: center;
-    /* display: inline-block; */
-    transform: scale(0.5);
+    box-sizing: border-box;
+    --toggle-width: 100px;
+    --toggle-height: 50px;
+    --width: var(--toggle-width);
+    --height: var(--toggle-height);
+    --toggle-handle-radius: 100px;
+    /* --toggle-handle-radius: calc(var(--toggle-height) - 16px); */
+
+    --sun-color: #f5eb42;
+    --sun-border-color: #e4c74d;
+    --moon-border-color: #c8cab0;
+    --moon-color: #fffdf2;
+    --toggle-border-color: #81c0d5;
+    --toggle-background-color: #c0e6f6;
+
+    & * {
+        width: var(--width);
+        height: var(--height);
+    }
 
     .toggle {
         position: relative;
         /* display: inline-block; */
-        width: 100px;
-        padding: 4px;
-        border-radius: 40px;
+        /* padding: 4px; */
+        padding-inline: 6px;
+        border-radius: var(--toggle-handle-radius);
+        border: 4px solid var(--toggle-border-color);
+        background-color: var(--toggle-background-color);
     }
 
     .toggle:before,
@@ -36,22 +53,19 @@ FCFCFC - stars
 
     .toggle-bg {
         position: absolute;
-        top: -4px;
-        left: -4px;
-        width: 100%;
-        height: 100%;
-        background-color: #c0e6f6;
-        border-radius: 40px;
-        border: 4px solid #81c0d5;
+        /* top: -4px;
+        left: -4px; */
+        width: unset;
+        height: unset;
+        /* inset: 4px; */
+        /* border: 4px solid #81c0d5; */
+        border-radius: var(--toggle-handle-radius);
         transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .toggle-input {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         border: 1px solid red;
         border-radius: 40px;
         z-index: 2;
@@ -59,12 +73,17 @@ FCFCFC - stars
     }
 
     .toggle-switch {
+        --toggle-switch-size: calc(var(--toggle-height) - 16px);
+        --translate-x: calc(var(--toggle-width) - 100%);
+        --translate-y: -50%;
+        top: 50%;
+
         position: relative;
-        width: 40px;
-        height: 40px;
-        margin-left: 50px;
-        background-color: #f5eb42;
-        border: 4px solid #e4c74d;
+        width: var(--toggle-switch-size);
+        height: var(--toggle-switch-size);
+        transform: translateX(var(--translate-x)) translateY(var(--translate-y));
+        background-color: var(--sun-color);
+        border: 4px solid var(--sun-border-color);
         border-radius: 50%;
         transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -79,7 +98,7 @@ FCFCFC - stars
         border: 8px solid #d4d4d2;
         border-radius: 20px;
         background-color: #fff;
-        transform: scale(0.4);
+        transform: scale(0.3);
         transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -116,62 +135,65 @@ FCFCFC - stars
     }
 
     .toggle-switch-figureAlt {
+        --star-size: calc(var(--toggle-height) * 0.08);
+        --width: var(--star-size);
+        --height: var(--star-size);
         content: "";
         position: absolute;
-        top: 5px;
-        left: 2px;
-        width: 2px;
-        height: 2px;
-        background-color: #efeeda;
+        /* height: 2px; */
+        background-color: var(--moon-color);
         border-radius: 100%;
-        border: 4px solid #dee1c5;
-        box-shadow: 42px -7px 0 -3px #fcfcfc, 75px -10px 0 -3px #fcfcfc, 54px 4px 0 -4px #fcfcfc, 83px 7px 0 -2px #fcfcfc, 63px 18px 0 -4px #fcfcfc, 44px 28px 0 -2px #fcfcfc, 78px 23px 0 -3px #fcfcfc;
+        border: 4px solid var(--moon-border-color);
+        /* box-shadow: 42px -7px 0 -3px #fcfcfc, 75px -10px 0 -3px #fcfcfc, 54px 4px 0 -4px #fcfcfc, 83px 7px 0 -2px #fcfcfc, 63px 18px 0 -4px #fcfcfc, 44px 28px 0 -2px #fcfcfc, 78px 23px 0 -3px #fcfcfc; */
         transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        transform: scale(0);
+        transform: translate(10%, 10%) scale(0);
     }
 
     .toggle-switch-figureAlt:before {
+        --star-size: calc(var(--toggle-height) * 0.1);
         content: "";
         position: absolute;
-        top: -6px;
-        left: 18px;
-        width: 7px;
-        height: 7px;
-        background-color: #efeeda;
+        top: 20%;
+        width: var(--star-size);
+        height: var(--star-size);
+        background-color: var(--moon-color);
         border-radius: 100%;
-        border: 4px solid #dee1c5;
+        border: 4px solid var(--moon-border-color);
+        transform: translate(70%, -30%);
+
     }
 
     .toggle-switch-figureAlt:after {
+        --star-size: calc(var(--toggle-height) * 0.09);
         content: "";
         position: absolute;
-        top: 19px;
-        left: 15px;
-        width: 2px;
-        height: 2px;
-        background-color: #efeeda;
+        width: var(--star-size);
+        height: var(--star-size);
+        background-color: var(--moon-color);
         border-radius: 100%;
-        border: 4px solid #dee1c5;
+        border: 4px solid var(--moon-border-color);
+        transform: translate(50%, 70%);
+
     }
 
-    .toggle-input:checked~.toggle-switch {
-        margin-left: 0;
-        border-color: #dee1c5;
-        background-color: #fffdf2;
+    .toggle:has(.toggle-input:checked) .toggle-switch {
+        --translate-x: 0;
+        border-color: var(--moon-border-color);
+        background-color: var(--moon-color);
     }
 
-    .toggle-input:checked~.toggle-bg {
-        background-color: #484848;
-        border-color: #202020;
+    .toggle:has(.toggle-input:checked) {
+        --toggle-background-color: #484848;
+        --toggle-border-color: #202020;
     }
 
-    .toggle-input:checked~.toggle-switch .toggle-switch-figure {
-        margin-left: 40px;
+    .toggle:has(.toggle-input:checked) .toggle-switch-figure {
+        /* margin-left: 40px; */
         opacity: 0;
         transform: scale(0.1);
     }
 
-    .toggle-input:checked~.toggle-switch .toggle-switch-figureAlt {
+    .toggle:has(.toggle-input:checked) .toggle-switch-figureAlt {
         transform: scale(1);
     }
 }
@@ -188,6 +210,9 @@ FCFCFC - stars
     --text: #d61414; */
 }
 
-.menu-items {
+
+
+
+.top-nav {
     display: inline-block;
 }
