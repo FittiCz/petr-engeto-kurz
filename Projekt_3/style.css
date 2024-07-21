@@ -13,14 +13,13 @@ FCFCFC - stars
 .wrapper {
     /* padding-top: 40px; */
     text-align: center;
-    display: inline-block;
+    /* display: inline-block; */
+    transform: scale(0.5);
 
     .toggle {
-        transform: scale(0.5);
         position: relative;
-        display: inline-block;
+        /* display: inline-block; */
         width: 100px;
-        margin-left: 100px;
         padding: 4px;
         border-radius: 40px;
     }
@@ -179,12 +178,16 @@ FCFCFC - stars
 
 [data-theme="light"] {
     color-scheme: light;
-    --base: #cfcfcf;
-    --text: #212121;
+    /* --base: #cfcfcf;
+    --text: #212121; */
 }
 
 [data-theme="dark"] {
     color-scheme: dark;
-    --base: #212121;
-    --text: #cfcfcf;
+    /* --base: #212121;
+    --text: #d61414; */
+}
+
+.menu-items {
+    display: inline-block;
 }
