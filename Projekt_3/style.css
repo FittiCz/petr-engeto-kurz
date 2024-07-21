@@ -11,7 +11,7 @@ FCFCFC - stars
 */
 
 .wrapper {
-    padding-top: 40px;
+    /* padding-top: 40px; */
     text-align: center;
     display: inline-block;
 
@@ -175,4 +175,16 @@ FCFCFC - stars
     .toggle-input:checked~.toggle-switch .toggle-switch-figureAlt {
         transform: scale(1);
     }
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --base: #cfcfcf;
+    --text: #212121;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --base: #212121;
+    --text: #cfcfcf;
 }
