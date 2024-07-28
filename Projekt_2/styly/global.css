@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
 
 :root {
-    cursor: url("/images/mouse.png"), auto;
+    cursor: url("../images/mouse.png"), auto;
     font-size: 62.5%;
     --back-nav-color: #7ca4bd;
     --hover-color: #fffbc7;
@@ -120,7 +120,7 @@ a *,
     text-decoration: none;
     color: black;
     cursor:
-        url("/images/hover.png") 10 15,
+        url("../images/hover.png") 10 15,
         auto;
 
     &:visited {

@@ -38,19 +38,19 @@ const photo2 = document.querySelector(".photo2");
 
 if (photo1 && photo2) {
     photo1.addEventListener("mouseenter", () => {
-        photo1.src = "/images/MattGroeningArt.png"
+        photo1.src = "../images/MattGroeningArt.png"
     });
 
     photo1.addEventListener("mouseleave", () => {
-        photo1.src = "/images/Matt_Groening_by_Gage_Skidmore_2.jpg"
+        photo1.src = "../images/Matt_Groening_by_Gage_Skidmore_2.jpg"
     });
 
     photo2.addEventListener("mouseenter", () => {
-        photo2.src = "/images/David X. Cohen_art.png"
+        photo2.src = "../images/David X. Cohen_art.png"
     });
 
     photo2.addEventListener("mouseleave", () => {
-        photo2.src = "/images/David_X._Cohen_by_Gage_Skidmore_2.jpg"
+        photo2.src = "../images/David_X._Cohen_by_Gage_Skidmore_2.jpg"
     });
 }
 

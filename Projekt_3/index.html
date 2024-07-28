@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
     <!-- Petr Kovalský -->
     <!-- mailodpietra@gmail.com -->
     <!-- Petr Kovalský -->
@@ -7,7 +7,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="styly/global.css">
+        <link rel="stylesheet" href="styly/index-mobil.css">
+        <link rel="stylesheet" href="styly/index-desktop.css">
         <title>Document</title>
     </head>
 
@@ -15,67 +17,144 @@
         <header>
             <nav class="top-nav">
                 <div class="menu-items">
-                    <a href="#">O mně</a>
-                    <a href="#">Moje projekty</a>
-                    <a href="#">Kontakt</a>
-                </div>
-                <div class="wrapper">
-                    <div class="toggle">
-                        <input class="toggle-input" type="checkbox" />
-                        <div class="toggle-bg"></div>
-                        <div class="toggle-switch">
-                            <div class="toggle-switch-figure"></div>
-                            <div class="toggle-switch-figureAlt"></div>
-                        </div>
+                    <div class="menu-items-wrapper">
+                        <a href="#">O mně</a>
+                        <a href="#portfolio">Moje projekty</a>
+                        <a href="#kontakt">Kontakt</a>
                     </div>
                 </div>
             </nav>
+            <div role="button" class="hamburger">
+                <div class="icon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                </div>
+                <div class="icon2">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
+                </div>
+            </div>
+            <!-- <div class="wrapper">
+                <div class="toggle">
+                    <input class="toggle-input" type="checkbox" />
+                    <div class="toggle-bg"></div>
+                    <div class="toggle-switch">
+                        <div class="toggle-switch-figure"></div>
+                        <div class="toggle-switch-figureAlt"></div>
+                    </div>
+                </div>
+            </div> -->
         </header>
 
         <section class="hero">
-            <h1>Vítej na mém webu</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et doloremque expedita commodi minima, repudiandae nisi reprehenderit voluptatem cum numquam tenetur animi unde eos nobis! Velit ad debitis consequatur repellat quaerat.
-            </p>
+
+            <div class="block">
+                <div class="left">
+                    <div class="box">
+                        <svg class="hero-icon" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <linearGradient id="Gradient2" x1="0" x2="100%" y1="50%" y2="0">
+                                    <stop class="svg-color1" offset="0%" />
+                                    <!-- <stop offset="50%" stop-color="black" stop-opacity="0" /> -->
+                                    <stop class="svg-color2" offset="100%" />
+                                </linearGradient>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                    }
+
+                                    .cls-2 {
+                                        clip-path: url(#clip-path);
+                                        fill: url(#Gradient2);
+                                    }
+                                </style>
+                                <clipPath id="clip-path">
+                                    <rect class="cls-1" x="-0.15" y="0.06" width="24" height="24" />
+                                </clipPath>
+                            </defs>
+                            <title>box-code</title>
+                            <g class="cls-2">
+                                <path d="M8.46,14.51a.74.74,0,0,1-.53-.22L6.12,12.48a.74.74,0,0,1,0-1.06l2-2a.75.75,0,0,1,1.06,0,.75.75,0,0,1,0,1.06L7.71,12,9,13.23a.75.75,0,0,1,0,1.06A.74.74,0,0,1,8.46,14.51Z" />
+                                <path d="M15.54,14.51a.74.74,0,0,1-.53-.22.75.75,0,0,1,0-1.06L16.29,12l-1.43-1.43a.75.75,0,0,1,0-1.06.75.75,0,0,1,1.06,0l2,2a.74.74,0,0,1,0,1.06l-1.81,1.81A.74.74,0,0,1,15.54,14.51Z" />
+                                <path d="M11,15.44a.63.63,0,0,1-.26,0,.74.74,0,0,1-.44-1L12.34,8.8a.75.75,0,0,1,1-.44.74.74,0,0,1,.44,1L11.66,15A.77.77,0,0,1,11,15.44Z" />
+                                <path d="M17.25,22.75H6.75a4,4,0,0,1-4-4V5.25a4,4,0,0,1,4-4h10.5a4,4,0,0,1,4,4v13.5A4,4,0,0,1,17.25,22.75Zm-10.5-20a2.5,2.5,0,0,0-2.5,2.5v13.5a2.5,2.5,0,0,0,2.5,2.5h10.5a2.5,2.5,0,0,0,2.5-2.5V5.25a2.5,2.5,0,0,0-2.5-2.5Z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>Vítej na mém webu</h1>
+                    <p>
+                        Jmenuji se Petr Kovalský a jsem začínající Front-end Developer. Podívejte se na mé projekty a zjistěte, jak vám mohu pomoci s vaším webovým projektem.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
+
             <h2>Moje portfolio</h2>
-            <div>
-                <img src="/Images/projekt1.png" alt="náhledový obrázek webu">
-                <p>Projekt č.1</p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <a href="https://petr.maweb.eu/weby/obchod-s-jablky/" target="_blank">
+                        <img src="Images/projekt1.webp" alt="náhledový obrázek webu">
+                        Projekt č.1
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://petr.maweb.eu/weby/projekt-1/" target="_blank">
+                        <img src="Images/projekt2.webp" alt="náhledový obrázek webu">
+                        Projekt č.2
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="Images/projekt3.webp" alt="náhledový obrázek webu">
+                        Projekt č.3
+                    </a>
+                </div>
             </div>
-            <div>
-                <img src="/Images/projekt2.png" alt="náhledový obrázek webu">
-                <p>Projekt č.2</p>
-            </div>
-            <div>
-                <img src="/Images/projekt3.png" alt="náhledový obrázek webu">
-                <p>Projekt č.3</p>
-            </div>
+
         </section>
 
-        <section class="kontakt">
+        <section class="kontakt" id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Pro více informací, zašlete kontakt.</p>
 
             <form>
-                <label for="name">Jméno:</label>
-                <input type="text" id="name" name="name" placeholder="Zadejte své jméno" style="width: 200px;">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Zadejte svůj email" style="width: 200px;">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email-check" name="email-check" placeholder="Zadejte svůj email pro kontrolu" style="width: 200px;">
-                <br>
-                <input type="submit" value="Odeslat">
+                <div class="row">
+                    <label for="name">Jméno:</label>
+                    <input type="text" id="name" name="name" placeholder="Zadejte své jméno" font-size="large" />
+                </div>
+
+                <div class="row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Zadejte svůj email" font-size="large" />
+                </div>
+
+                <div class="row">
+                    <label for="email">Email:</label>
+                    <input autocomplete="email-new" type="email" id="email-check" name="email-check" placeholder="Zadejte svůj email pro kontrolu" font-size="large" />
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="Odeslat">
+                </div>
             </form>
         </section>
 
         <!-- aria hidden - skryto pro čtečku -->
-        <div aria-hidden="true" class="anchor">
-            <a href="#top"><img src="./icons/svg-icons/arrow_warm_up_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+        <div aria-hidden="true" id="anchor">
+            <a href="#top"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed">
+                    <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                </svg>
             </a>
         </div>
+
 
         <footer>
             <p>© 2024 - Petr Kovalský</p>
