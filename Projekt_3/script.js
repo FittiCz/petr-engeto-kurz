@@ -4,10 +4,8 @@ switcher.addEventListener("change", switchTheme)
 
 function switchTheme(event) {
     const isLightMode = !event.target.checked
-
     if (isLightMode) {
         document.documentElement.setAttribute("data-theme", "light")
-
     }
     else {
         document.documentElement.setAttribute("data-theme", "dark")
@@ -18,6 +16,14 @@ function switchTheme(event) {
 const toggle = document.querySelector('.bb8-toggle__checkbox');
 const initialState = localStorage.getItem('toggleState') == 'true';
 toggle.checked = initialState;
+
+switchTheme(
+    {
+        target: {
+            checked: initialState
+        }
+    }
+)
 
 toggle.addEventListener('change', function () {
     localStorage.setItem('toggleState', toggle.checked);

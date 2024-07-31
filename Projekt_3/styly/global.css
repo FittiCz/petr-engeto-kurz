@@ -39,8 +39,8 @@
     --box-shadow1: #469c74;
     --box-shadow2: #5ed29c;
     --placeholder-background: var(--color-green-2);
-    --input-box-shadow1: #63a885;
-    --input-box-shadow2: #85e4b5;
+    --input-box-shadow1: #36795a;
+    --input-box-shadow2: #6ef5b6;
     --placeholder-text: rgba(0, 0, 0, 0.568);
     --input-fokus: var(--color-green-1);
     --input-filled-background: var(--color-green-3);
@@ -66,8 +66,8 @@
     --box-shadow1: #163628;
     --box-shadow2: #20503c;
     --placeholder-background: var(--color-green-7);
-    --input-box-shadow1: #163628;
-    --input-box-shadow2: #20503c;
+    --input-box-shadow1: #122c21;
+    --input-box-shadow2: #245a43;
     --placeholder-text: rgba(238, 236, 236, 0.568);
     --input-fokus: var(--color-green-4);
     --input-filled-background: var(--color-green-6);
@@ -195,7 +195,7 @@ header {
     backdrop-filter: blur(5px);
     position: fixed;
     padding: 1rem;
-    bottom: 1rem;
+    bottom: 4rem;
     right: 1rem;
     animation-name: floating-anchor;
     animation-duration: 1.5s;

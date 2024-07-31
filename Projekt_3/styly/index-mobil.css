@@ -167,8 +167,8 @@ body {
                 padding: 10px 15px;
                 width: 250px;
                 border: none;
-                box-shadow: 6px 6px 12px var(--input-box-shadow1),
-                    -6px -6px 12px var(--input-box-shadow2);
+                box-shadow: 5px 5px 30px var(--input-box-shadow1),
+                    -5px -5px 30px var(--input-box-shadow2);
 
                 &::placeholder {
                     color: var(--placeholder-text);
@@ -199,4 +199,10 @@ body {
 
 footer {
     background-color: var(--footer-backround);
+    text-align: center;
+
+    & a {
+        text-decoration: underline;
+        margin: 0 15px;
+    }
 }
