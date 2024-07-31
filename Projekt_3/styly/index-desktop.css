@@ -21,8 +21,8 @@
                     width: 400px;
                     margin: 0 auto;
                     border-radius: 50px;
-                    box-shadow: inset 5px 5px 8px #42926d,
-                        inset -5px -5px 8px #62dca3;
+                    box-shadow: inset 5px 5px 8px var(--hero-svg-box-shadow1),
+                        inset -5px -5px 8px var(--hero-svg-box-shadow2);
 
                     & svg {
                         height: 450px;
@@ -30,11 +30,11 @@
                         filter: drop-shadow(15px 20px 0px #00000018);
 
                         & .svg-color1 {
-                            stop-color: #95D5B2;
+                            stop-color: var(--hero-svg-color1);
                         }
 
                         & .svg-color2 {
-                            stop-color: #B7E4C7;
+                            stop-color: var(--hero-svg-color2);
                         }
                     }
                 }
@@ -48,14 +48,32 @@
         }
 
         & p {
-            width: 60ch;
+            max-width: 60ch;
             font-size: 2rem;
             margin: 0 auto;
 
         }
     }
 
+    .o-mne {
+        max-width: 100ch;
+        margin: 0 auto;
+
+        & div {
+            text-align: justify;
+            /* float: left; */
+        }
+
+        & pre {
+            float: right;
+            margin: 10px 0 0 15px;
+        }
+    }
+
+
     .portfolio {
+        clear: both;
+
         & h2 {
             margin-bottom: 30px;
         }
@@ -68,19 +86,29 @@
             margin: 0 auto;
             margin-bottom: 40px;
 
+            &:has(.card:hover) .card:not(:hover) {
+                filter: blur(2px) brightness(80%);
+                transform: scale(.9);
+            }
+
             & .card {
-                transition: transform .5s;
+                transition: transform .5s, filter .5s;
             }
 
             & .card:hover {
-                transform: scale(1.1);
+                transform: scale(1.05);
+
+                & img {
+                    border: 2px solid var(--card-hover-border-color);
+                }
             }
         }
     }
 
     .kontakt {
+        margin: 0 25px 35px 25px;
+
         & form {
-            /* font-size: 2.5rem; */
             width: 500px;
             padding-block: 50px;
 
@@ -99,10 +127,7 @@
                     font-size: 2rem;
                 }
 
-                & input[type="text"]:focus,
-                input[type="email"]:focus {
-                    background-color: var(--input-active-color);
-                }
+
 
                 & &::placeholder {
                     font-size: 2rem;
@@ -110,13 +135,15 @@
 
                 & input[type="submit"] {
                     font-size: 2rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--form-hover-btn);
+                    }
                 }
             }
 
-            input.filled {
-                background-color: rgba(172, 248, 213, 0.699);
-                box-shadow: 0 0 0 1000px rgba(172, 248, 213, 0.699) inset;
-            }
+
         }
     }
 

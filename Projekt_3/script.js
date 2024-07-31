@@ -1,27 +1,27 @@
-// const switcher = document.querySelector(".toggle-input")
+const switcher = document.querySelector(".bb8-toggle__checkbox")
 
-// switcher.addEventListener("change", switchTheme)
+switcher.addEventListener("change", switchTheme)
 
-// function switchTheme(event) {
-//     const isLightMode = !event.target.checked
+function switchTheme(event) {
+    const isLightMode = !event.target.checked
 
-//     if (isLightMode) {
-//         document.documentElement.setAttribute("data-theme", "light")
+    if (isLightMode) {
+        document.documentElement.setAttribute("data-theme", "light")
 
-//     }
-//     else {
-//         document.documentElement.setAttribute("data-theme", "dark")
-//     }
-// }
+    }
+    else {
+        document.documentElement.setAttribute("data-theme", "dark")
+    }
+}
 
 
-// const toggle = document.querySelector('.toggle-input');
-// const initialState = localStorage.getItem('toggleState') == 'true';
-// toggle.checked = initialState;
+const toggle = document.querySelector('.bb8-toggle__checkbox');
+const initialState = localStorage.getItem('toggleState') == 'true';
+toggle.checked = initialState;
 
-// toggle.addEventListener('change', function () {
-//     localStorage.setItem('toggleState', toggle.checked);
-// });
+toggle.addEventListener('change', function () {
+    localStorage.setItem('toggleState', toggle.checked);
+});
 
 const header = document.querySelector('header')
 const hamburger = document.querySelector(".hamburger")
@@ -31,6 +31,7 @@ const hero = document.querySelector(".hero")
 hamburger.addEventListener("click", toggleMenu)
 
 function toggleMenu() {
+    console.log("test");
     const menuIsOpen = header.classList.contains("open")
     if (menuIsOpen == false) {
         header.classList.add("open")
@@ -44,17 +45,63 @@ function toggleMenu() {
     }
 }
 
-const anchor = document.getElementById("anchor")
-console.log(anchor);
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY >= 100) {
-        anchor.style.display = "block";
+function testEmail(email) {
+    const regex = /^((?:[A-Za-z0-9!#$%&'*+\-\/=?^_`{|}~]|(?<=^|\.)"|"(?=$|\.|@)|(?<=".*)[ .](?=.*")|(?<!\.)\.){1,64})(@)((?:[A-Za-z0-9.\-])*(?:[A-Za-z0-9])\.(?:[A-Za-z0-9]){2,})$/gm
+    const validEmail = regex.test(email)
+    return validEmail
+}
+
+const emailInput = document.getElementById("email")
+const emailControlInput = document.getElementById("email-check")
+const emailError = document.querySelector(".email-error")
+const emailRegexError = document.querySelector(".email-regex-error")
+
+emailInput.addEventListener("input", () => {
+    const emailValue = emailInput.value
+    const isValid = testEmail(emailValue)
+    if (emailValue === "") {
+        emailRegexError.style.display = "none"
+        return
     }
-    else {
-        anchor.style.display = "none";
+    if (isValid) {
+        console.log("yes");
+        emailRegexError.style.display = "none"
+    } else {
+        console.log("No");
+        emailRegexError.style.display = "block"
     }
 })
+
+function compareEmails() {
+    const email1 = emailInput.value
+    const email2 = emailControlInput.value
+    console.log("hodnota:" + email2);
+    if (email2 === "") {
+        emailInput.style.border = "none"
+        emailControlInput.style.border = "none"
+        emailError.style.display = "none"
+        return
+    }
+    if (email1 === email2) {
+        emailInput.style.border = "4px solid green"
+        emailControlInput.style.border = "4px solid green"
+        emailError.style.display = "none"
+    } else {
+        console.log("mismatch");
+        emailInput.style.border = "4px solid red"
+        emailControlInput.style.border = "4px solid red"
+        emailError.style.display = "block"
+    }
+}
+
+emailInput.addEventListener("input", compareEmails)
+
+emailControlInput.addEventListener("input", compareEmails)
+
+
+
+
 
 const inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
 
@@ -73,7 +120,6 @@ inputs.forEach(input => {
         } else {
             this.classList.remove('filled');
         }
-        console.log("bjlskjds");
     });
 
     // kontrola stavu při načtení stránky
@@ -81,3 +127,15 @@ inputs.forEach(input => {
         input.classList.add('filled');
     }
 });
+
+
+const anchor = document.getElementById("anchor")
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY >= 100) {
+        anchor.style.display = "block";
+    }
+    else {
+        anchor.style.display = "none";
+    }
+})
