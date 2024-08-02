@@ -25,6 +25,7 @@ switchTheme(
     }
 )
 
+// uložení motivu 
 toggle.addEventListener('change', function () {
     localStorage.setItem('toggleState', toggle.checked);
 });
