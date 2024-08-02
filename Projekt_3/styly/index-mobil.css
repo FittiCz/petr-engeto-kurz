@@ -6,8 +6,7 @@ body {
 
 
 .hero {
-    margin: 25px 0;
-    padding: 0 25px;
+    padding: 25px 25px;
     text-align: center;
     transition: margin 1s;
 
@@ -23,7 +22,7 @@ body {
 
 }
 
-.o-mne {
+#o-mne {
     margin: 0 25px 25px 25px;
 
     & h2 {
@@ -74,7 +73,7 @@ body {
 
 }
 
-.portfolio {
+#portfolio {
     margin: 0 25px;
 
     & h2 {
@@ -108,7 +107,7 @@ body {
     }
 }
 
-.kontakt {
+#kontakt {
     margin: 10px 25px 30px 25px;
 
     & h2 {
