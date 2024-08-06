@@ -13,7 +13,7 @@ function render() {
         name.textContent = oneOrganizationData.jmenoOrganizace
 
         const image = cardElement.querySelector("img")
-        image.setAttribute("src", `/images/${oneOrganizationData.obrazek}`)
+        image.setAttribute("src", `../images/${oneOrganizationData.obrazek}`)
 
         const info = cardElement.querySelector(".info")
         info.textContent = oneOrganizationData.info

@@ -14,7 +14,7 @@ function render() {
         name.textContent = oneCharacterData.jmenoPostavy
 
         const image = cardElement.querySelector(".imgBox img")
-        image.setAttribute("src", `/images/${oneCharacterData.obrazek}`)
+        image.setAttribute("src", `../images/${oneCharacterData.obrazek}`)
 
         const bio = cardElement.querySelector(".bio")
         bio.textContent = oneCharacterData.bio

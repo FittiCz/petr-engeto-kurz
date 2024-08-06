@@ -12,7 +12,7 @@ function render() {
     function fillData(cardElement, cardData) {
 
         const image = cardElement.querySelector(".imgBox img")
-        image.setAttribute("src", `/images/season${cardData.cisloSerie}.webp`)
+        image.setAttribute("src", `../images/season${cardData.cisloSerie}.webp`)
 
         const serieNumber = cardElement.querySelector(".cislo-serie")
         serieNumber.textContent = cardData.cisloSerie
@@ -27,7 +27,7 @@ function render() {
         durationMinutes.textContent = cardData.delkaSerie.minuty
 
         const link = cardElement.querySelector(".link")
-        link.setAttribute("href", `/pages/epizody.html?cisloSerie=${cardData.cisloSerie}`)
+        link.setAttribute("href", `epizody.html?cisloSerie=${cardData.cisloSerie}`)
 
     }
 
