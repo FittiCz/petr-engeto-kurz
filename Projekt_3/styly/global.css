@@ -3,12 +3,6 @@
     src: url("../fonts/Diavlo_MEDIUM_II_37.otf");
 }
 
-.tmpbtn {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
 :root {
     font-size: 62.5%;
     letter-spacing: 0.6px;
@@ -38,7 +32,7 @@
     --kontakt-form-background: var(--color-green-5);
     --box-shadow1: #469c74;
     --box-shadow2: #5ed29c;
-    --placeholder-background: var(--color-green-2);
+    --input-background-color: var(--color-green-2);
     --input-box-shadow1: #36795a;
     --input-box-shadow2: #6ef5b6;
     --placeholder-text: rgba(0, 0, 0, 0.568);
@@ -48,6 +42,8 @@
     --form-hover-btn: var(--color-green-3);
     --card-hover-border-color: var(--color-green-1);
     --hover-background-color: var(--color-green-3);
+    --sing-in-box-shadow1: #5a9a7a;
+    --sing-in-box-shadow2: #8ef2c0;
     --keyword: #52b1ff;
     --text-color: #121212;
 
@@ -65,16 +61,18 @@
     --kontakt-form-background: var(--color-green-8);
     --box-shadow1: #163628;
     --box-shadow2: #20503c;
-    --placeholder-background: var(--color-green-7);
+    --input-background-color: var(--color-green-7);
     --input-box-shadow1: #122c21;
     --input-box-shadow2: #245a43;
     --placeholder-text: rgba(238, 236, 236, 0.568);
     --input-fokus: var(--color-green-4);
     --input-filled-background: var(--color-green-6);
-    --footer-backround: var(--color-green-7);
-    --form-hover-btn: var(--color-green-7);
+    --footer-backround: color-mix(in srgb, var(--color-green-7), black 15%);
+    --form-hover-btn: var(--color-green-6);
     --card-hover-border-color: var(--color-green-3);
     --hover-background-color: var(--color-green-6);
+    --sing-in-box-shadow1: #23533e;
+    --sing-in-box-shadow2: #378160;
     --text-color: #ddd;
     --keyword: #569cd6;
 }
@@ -82,12 +80,6 @@
 body {
     font-size: initial;
     font-family: Diavlo;
-}
-
-.page-max-width {
-    padding: 0 25px;
-    margin: 0 auto;
-    max-width: 1000px;
 }
 
 * {
@@ -190,12 +182,83 @@ header {
     }
 }
 
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--footer-backround);
+    text-align: center;
+
+    & a {
+        text-decoration: underline;
+        margin: 0 15px;
+    }
+
+    & .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: relative;
+            margin-top: 15px;
+
+            & label {
+                position: absolute;
+                transition: bottom 200ms;
+                bottom: 0;
+                color: var(--text-color);
+            }
+
+            & input {
+                background-color: var(--input-background-color);
+
+                &[type="text"]:focus,
+                &[type="password"]:focus {
+                    background-color: var(--input-fokus);
+                }
+
+                &.filled {
+                    background-color: var(--input-filled-background);
+                    box-shadow: 0 0 0 1000px var(--input-filled-background) inset;
+                }
+            }
+
+            &>* {
+                flex: 1;
+                border-style: none;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        }
+
+        & input[type="submit"] {
+            background-color: var(--input-background-color);
+            width: min-content;
+            align-self: center;
+            padding: 10px;
+            border-radius: 5px;
+            border-style: none;
+            font-weight: 600;
+        }
+
+
+    }
+}
+
 #anchor {
     border-radius: 30px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) brightness(.98);
     position: fixed;
     padding: 1rem;
-    bottom: 4rem;
+    bottom: 1rem;
     right: 1rem;
     animation-name: floating-anchor;
     animation-duration: 1.5s;
@@ -206,17 +269,6 @@ header {
         fill: var(--icon-color);
     }
 }
-
-
-footer {
-    background-color: var(--nav-footer);
-    padding: 20px 10px;
-
-    & p {
-        text-align: center;
-    }
-}
-
 
 @keyframes floating-anchor {
 
@@ -267,5 +319,33 @@ footer {
         .hamburger {
             display: none;
         }
+    }
+
+    footer {
+        flex-direction: row;
+        padding-inline: 25px;
+        align-items: center;
+        padding-block: 40px;
+
+        & .login {
+            flex-direction: row;
+            margin-left: auto;
+
+
+            &>div {
+                flex-direction: row;
+                margin-top: 0;
+            }
+        }
+
+        & input[type="submit"] {
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--form-hover-btn);
+            }
+        }
+
+
     }
 }

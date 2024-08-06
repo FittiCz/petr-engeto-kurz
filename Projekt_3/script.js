@@ -108,9 +108,7 @@ emailControlInput.addEventListener("input", compareEmails)
 
 
 
-
-
-const inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
+const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
 
 inputs.forEach(input => {
     input.addEventListener('input', function () {
@@ -136,10 +134,113 @@ inputs.forEach(input => {
 });
 
 
+const passwordInput = document.getElementById("pass")
+
+// funkce která kontroluje sekvenci ASCII (abc,cde,567)
+function isSequential(str) {
+    let count = 0
+    for (let i = 0; i < str.length - 1; i++) {
+        if (str.charCodeAt(i) + 1 === str.charCodeAt(i + 1)) {
+            //následující znak je v ASCII tabulce jako další v pořadí např a=97 b=98
+            count++;
+            if (count >= 2) {
+                //sekvence tří a více znaků v ASCII -> abc , abcd, 1234
+                return true;
+            }
+        } else {
+            // pokud nebyly nalezeny tři znaky v sekvenci resetuji počítadlo
+            count = 0;
+        }
+    }
+    return false;
+}
+
+function hasRepeatingSequences(str) {
+    // Kontrola opakování nejméně tří znaků
+    let regex = /(\w{1,})\1\1/g;
+    return regex.test(str);
+}
+
+function testPassword(password, input) {
+    //min. jeden malý znak && min. jeden velký znak && speciální znak && číslo
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]_`{|}~\\])(?=.*[\d]).*$/g
+    const validPassword = regex.test(password)
+    console.log(password.length);
+
+    if (password.length < 6) {
+        input.setCustomValidity("Heslo musí mít nejméně 6 znaků")
+        return false
+    }
+    if (!validPassword) {
+        input.setCustomValidity("Heslo musí obsahovat: jedno malé písmeno, jedno velké písmeno, jeden speciální znak a jedno číslo")
+        return false
+    }
+
+    if (isSequential(password)) {
+        input.setCustomValidity("Heslo nesmí obsahovat sekvenci znaků")
+        return false;
+    }
+
+    if (hasRepeatingSequences(password)) {
+        input.setCustomValidity("Heslo nesmí obsahovat opakující se znaky")
+        return false;
+    }
+    input.setCustomValidity("")
+    return true;
+}
+
+passwordInput.addEventListener("input", () => {
+    const passwordValue = passwordInput.value
+    testPassword(passwordValue, passwordInput);
+    passwordInput.reportValidity()
+})
+
+const userName = document.getElementById("username")
+const userNameLabel = document.querySelector('[for="username"]')
+
+userName.addEventListener("focusin", () => {
+    userNameLabel.style.bottom = "100%"
+
+})
+
+
+userName.addEventListener("focusout", () => {
+
+    if (userName.value.length === 0) {
+        userNameLabel.style.bottom = "0"
+    }
+})
+
+const password = document.getElementById("pass")
+const passLabel = document.querySelector('[for="pass"]')
+
+password.addEventListener("focusin", () => {
+    passLabel.style.bottom = "100%"
+})
+
+password.addEventListener("focusout", () => {
+    if (password.value.length === 0) {
+        passLabel.style.bottom = "0"
+    }
+})
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+    // Kontrola, zda je element viditelný horizontálně i vertikálně
+    const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+    const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+    return vertInView && horInView;
+}
+
 const anchor = document.getElementById("anchor")
+const footer = document.querySelector("footer")
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY >= 100) {
+    if (window.scrollY >= 100 && !isInViewport(footer)) {
         anchor.style.display = "block";
     }
     else {
