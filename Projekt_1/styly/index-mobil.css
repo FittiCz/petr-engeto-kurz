@@ -5,34 +5,7 @@
     justify-content: end;
     align-items: center;
     padding: 0 25px;
-    /* &.menu-open .menu-items {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 25px;
-        background-color: #33292ae2;
-        top: 60px;
-        left: 0;
-        right: 0;
-        & .menu-item,
-        & .menu-item:visited {
-            color: var(--color-text-light);
-            text-decoration: none;
-        }
-    }
-    & .menu-items {
-        display: none;
-    }
-    &.menu-open .open-menu-icon {
-        display: none;
-    }
-    & .close-menu-icon {
-        display: none;
-    }
-    &.menu-open .close-menu-icon {
-        display: block;
-    } */
+
     & .menu-items {
         display: none;
     }
@@ -43,12 +16,14 @@
     background-position: center;
     background-size: cover;
     height: 90dvh;
+
     & .page-max-width {
         display: flex;
         height: 100%;
         justify-content: end;
         align-items: flex-end;
     }
+
     & h1 {
         font-size: 4.2rem;
         width: min-content;
@@ -64,9 +39,11 @@
 
 .about-us {
     padding: 65px 0;
+
     & h2 {
         margin-bottom: 30px;
     }
+
     & p {
         text-align: left;
         margin-bottom: 40px;
@@ -76,26 +53,31 @@
 .what-we-do {
     background-color: var(--color-background-dark);
     padding: 65px 0;
+
     & h2 {
         text-align: center;
         margin-bottom: 30px;
     }
+
     color: var(--color-text-light);
 
     & p:first-of-type {
         text-align: center;
         margin-bottom: 40px;
     }
+
     & .icons {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         & .icon {
             & img {
                 filter: invert();
                 width: 80px;
                 height: 80px;
             }
+
             & p {
                 margin-top: var(--margin-top-icons);
                 margin-bottom: var(--margin-bottom-icons);
@@ -106,12 +88,15 @@
 
 .our-trips {
     padding: 65px 0;
+
     & img {
         margin-bottom: 15px;
     }
+
     & div:has(> h2) {
         background-color: var(--color-background-white);
     }
+
     & h2 {
         text-align: center;
         padding: 30px 0;
@@ -124,13 +109,16 @@
     background-color: var(--color-background-light);
     color: var(--color-text-light);
     padding: 65px 0;
+
     & h2 {
         margin-bottom: 60px;
     }
+
     & p {
         text-align: left;
         margin-bottom: 60px;
     }
+
     & a {
         text-decoration: none;
         font-weight: bold;
@@ -138,6 +126,7 @@
         color: var(--color-text-dark);
         padding: 12px 12px;
         border-radius: var(--border-radius);
+
         &:visited {
             color: var(--color-text-dark);
         }
@@ -146,23 +135,29 @@
 
 .reviews {
     padding: 65px 0;
+
     & h2 {
         text-align: center;
     }
+
     & p {
         text-align: center;
         margin-top: 35px;
     }
-    & > div > div:not(.reviews-wrapper) > p {
+
+    &>div>div:not(.reviews-wrapper)>p {
         margin-bottom: 70px;
     }
+
     & .profile-icon {
         border-radius: 200px;
         margin: 0 auto;
     }
+
     & .review-wrapper1 {
         margin-bottom: 55px;
     }
+
     & .review-name {
         font-weight: bold;
     }
@@ -172,13 +167,16 @@ footer {
     background-color: var(--color-background-gray);
     padding: 30px 0;
     text-align: center;
+
     & a {
         text-decoration: none;
         color: var(--color-link);
+
         &:visited {
             color: var(--color-link);
         }
     }
+
     & p {
         color: var(--color-text-light);
         padding-top: 7px;
