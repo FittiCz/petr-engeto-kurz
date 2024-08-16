@@ -1,4 +1,5 @@
 .top-nav {
+    position: relative;
     background-color: var(--color-background-dark);
     height: 60px;
     display: flex;
@@ -7,6 +8,24 @@
     padding: 0 25px;
 
     & .menu-items {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(145, 140, 140, 0.842);
+        backdrop-filter: blur(8.2px);
+
+
+        & a {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: var(--color-text-dark);
+        }
+    }
+
+    & .close-menu-icon {
         display: none;
     }
 }
