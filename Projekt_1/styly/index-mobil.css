@@ -9,7 +9,7 @@
 
     & .menu-items {
         position: absolute;
-        display: flex;
+        display: none;
         flex-direction: column;
         top: 100%;
         left: 0;
